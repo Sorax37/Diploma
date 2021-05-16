@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Обновление учетной карточки</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Обновление учетной карточки</h1><br>
+    <h2>Обучающие функции</h2><br>
+    <form action="/teaching/update/card_first" method="post">
+        <label>Введите ФИО преподавателя</label>
+        <input type="text" name="FIO" placeholder="ФИО преподавателя" class="form-control"><br>
+        <label>Введите дисциплину</label>
+        <input type="text" name="discipline" placeholder="Дисциплина" class="form-control"><br>
+        <label>Введите вид занятий</label>
+        <input type="text" name="lesson_type" placeholder="Вид занятий" class="form-control"><br>
+        <label>Введите группу</label>
+        <input type="text" name="student_group" placeholder="Группа" class="form-control"><br>
+        <label>Введите дату</label>
+        <input type="text" name="date" placeholder="Дата" class="form-control"><br>
+        <label>Введите количество часов</label>
+        <input type="text" name="number_of_hours" placeholder="Количество часов" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Подтвердить</button>
+    </form>
+</div>
+
+<div class="container mt-5 mb-5">
+    <h2>Функции по руководству и контролю</h2><br>
+    <form action="/teaching/update/card_second" method="post">
+        <label>Введите ФИО преподавателя</label>
+        <input type="text" name="FIO" placeholder="ФИО преподавателя" class="form-control"><br>
+        <label>Введите дисциплину</label>
+        <input type="text" name="discipline" placeholder="Дисциплина" class="form-control"><br>
+        <label>Введите вид занятий</label>
+        <input type="text" name="lesson_type" placeholder="Вид занятий" class="form-control"><br>
+        <label>Введите группу</label>
+        <input type="text" name="student_group" placeholder="Группа" class="form-control"><br>
+        <label>Введите дату</label>
+        <input type="text" name="date" placeholder="Дата" class="form-control"><br>
+        <label>Введите количество часов</label>
+        <input type="text" name="number_of_hours" placeholder="Количество часов" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Подтвердить</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Преподавание</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5" th:each="el : ${app_user}">
+    <h2>Раздел с расписанием, учетной карточкой, нагрузкой и тд</h2>
+    <li><a href="/teaching/schedule" class="nav-link px-2 link-dark">Расписание</a></li>
+    <li><a href="/teaching/update/schedule" class="nav-link px-2 link-dark">Обновить расписание</a></li>
+    <li><a href="/teaching/record_cardsss" class="nav-link px-2 link-dark">Учетная карточка</a></li>
+    <li><a href="/teaching/update/record_card" class="nav-link px-2 link-dark">Обновить учетную карточку</a></li>
+    <li><a href="/teaching/record_cards_show" class="nav-link px-2 link-dark">Просмотреть учетные карточки</a></li>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Преподавание</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container">
+    <h1>Расписание</h1><br>
+    <div class="table table-bordered">
+        <table class="table">
+            <thead>
+
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">Понедельник</th>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Понедельник' and el.period == '9:30'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Понедельник' and el.period == '11:20'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Понедельник' and el.period == '13:10'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Понедельник' and el.period == '15:25'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Понедельник' and el.period == '17:15'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Вторник</th>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Вторник' and el.period == '9:30'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Вторник' and el.period == '11:20'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Вторник' and el.period == '13:10'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Вторник' and el.period == '15:25'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Вторник' and el.period == '17:15'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Среда</th>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Среда' and el.period == '9:30'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Среда' and el.period == '11:20'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Среда' and el.period == '13:10'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Среда' and el.period == '15:25'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Среда' and el.period == '17:15'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Четверг</th>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Четверг' and el.period == '9:30'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Четверг' and el.period == '11:20'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Четверг' and el.period == '13:10'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Четверг' and el.period == '15:25'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Четверг' and el.period == '17:15'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Пятница</th>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Пятница' and el.period == '9:30'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Пятница' and el.period == '11:20'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Пятница' and el.period == '13:10'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Пятница' and el.period == '15:25'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+                <td th:each="el : ${schedules}" th:if="${el.day_of_the_week == 'Пятница' and el.period == '17:15'}">
+                    <div th:text="${'ДН: ' + el.day_of_the_week}"></div>
+                    <div th:text="${'Время начала: ' + el.period}"></div>
+                    <div th:text="${'Группа: ' + el.student_group}"></div>
+                    <div th:text="${'Дисциплина: ' + el.discipline}"></div>
+                    <div th:text="${'Аудитория: ' + el.audience}"></div>
+                    <div th:text="${'Преподаватель: ' + el.teacher}"></div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
