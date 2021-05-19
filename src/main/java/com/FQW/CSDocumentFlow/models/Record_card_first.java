@@ -12,6 +12,7 @@ public class Record_card_first {
 
     private String FIO, discipline, lesson_type, student_group, date;
     private int number_of_hours;
+    private boolean activity;
 
     public Record_card_first() {
     }
@@ -23,6 +24,7 @@ public class Record_card_first {
         this.student_group = student_group;
         this.date = date;
         this.number_of_hours = number_of_hours;
+        this.activity = true;
     }
 
     public Long getId() {
@@ -71,6 +73,14 @@ public class Record_card_first {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public boolean isActivity() {
+        return activity;
+    }
+
+    public void setActivity(boolean activity) {
+        this.activity = activity;
     }
 
     public int getNumber_of_hours() {

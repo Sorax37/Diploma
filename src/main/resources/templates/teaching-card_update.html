@@ -11,9 +11,7 @@
 <div class="container mt-5 mb-5">
     <h1>Обновление учетной карточки</h1><br>
     <h2>Обучающие функции</h2><br>
-    <form action="/teaching/update/card_first" method="post">
-        <label>Введите ФИО преподавателя</label>
-        <input type="text" name="FIO" placeholder="ФИО преподавателя" class="form-control"><br>
+    <form action="/teaching/card_first/update" method="post">
         <label>Введите дисциплину</label>
         <input type="text" name="discipline" placeholder="Дисциплина" class="form-control"><br>
         <label>Введите вид занятий</label>
@@ -31,16 +29,26 @@
 <div class="container mt-5 mb-5">
     <h2>Функции по руководству и контролю</h2><br>
     <form action="/teaching/update/card_second" method="post">
-        <label>Введите ФИО преподавателя</label>
-        <input type="text" name="FIO" placeholder="ФИО преподавателя" class="form-control"><br>
+        <label>Выберите вид работы</label>
+        <select type="text" name="kind_of_work" class="form-control">
+            <option>Экзамены</option>
+            <option>Зачеты</option>
+            <option>Руководство, консультации, рецензирование КП</option>
+            <option>Прием КП</option>
+            <option>Руководство, консультации, рецензирование КР</option>
+            <option>Прием КР</option>
+            <option>Рецензирование контр. работ студ. заочн.</option>
+            <option>Проверка и прием контрольных работ, расчетно-графических работ</option>
+            <option>Рук-во маг. дисс.</option>
+        </select><br>
         <label>Введите дисциплину</label>
         <input type="text" name="discipline" placeholder="Дисциплина" class="form-control"><br>
-        <label>Введите вид занятий</label>
-        <input type="text" name="lesson_type" placeholder="Вид занятий" class="form-control"><br>
+        <label>Введите факультет</label>
+        <input type="text" name="faculty" placeholder="Факультет" class="form-control"><br>
         <label>Введите группу</label>
         <input type="text" name="student_group" placeholder="Группа" class="form-control"><br>
-        <label>Введите дату</label>
-        <input type="text" name="date" placeholder="Дата" class="form-control"><br>
+        <label>Введите количество человек</label>
+        <input type="text" name="number_of_students" placeholder="Количество человек" class="form-control"><br>
         <label>Введите количество часов</label>
         <input type="text" name="number_of_hours" placeholder="Количество часов" class="form-control"><br>
         <button type="submit" class="btn btn-success">Подтвердить</button>

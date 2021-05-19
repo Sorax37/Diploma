@@ -22,10 +22,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.security.core.AuthenticationException;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
-//@PreAuthorize("hasAuthority('ADMIN')")
 public class TeachingController {
 
     @Autowired
@@ -54,19 +54,19 @@ public class TeachingController {
         return "teaching-schedule";
     }
 
-    //@PreAuthorize("hasAuthority('ADMIN')")
-    @GetMapping("/teaching/update/schedule")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @GetMapping("/teaching/schedule/update")
     public String teaching_schedule_update(Model model) { return "teaching-schedule_update";}
 
     @PreAuthorize("hasAuthority('ADMIN')")
-    @PostMapping("/teaching/update/schedule")
+    @PostMapping("/teaching/schedule/update")
     public String schedule_new_update(@RequestParam String day_of_the_week, @RequestParam String period, @RequestParam String student_group, @RequestParam String discipline, @RequestParam String audience, @RequestParam String teacher, Model model) {
         Schedule schedule = new Schedule(day_of_the_week, period, student_group, discipline, audience, teacher);
         scheduleRepository.save(schedule);
         return "redirect:/teaching/schedule";
     }
 
-    //@PreAuthorize("hasAuthority('ADMIN')")
+    /*//@PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/teaching/record_card")
     public String teaching_record_table(Model model) {
         Iterable<Record_card_first> rec_card_first = rec_card_first_Repository.findAll();
@@ -74,45 +74,62 @@ public class TeachingController {
         Iterable<Record_card_second> rec_card_second = rec_card_second_Repository.findAll();
         model.addAttribute("rec_card_second", rec_card_second);
         return "teaching-record_card";
-    }
+    }*/
 
-    @PreAuthorize("hasAuthority('ADMIN')")
-    @GetMapping("/teaching/update/record_card")
+
+    @GetMapping("/teaching/record_card/update")
     public String teaching_record_card_update(Model model) {
         return "teaching-card_update";
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
-    @PostMapping("/teaching/update/card_first")
-    public String card_new_update_first(@RequestParam String FIO, @RequestParam String discipline, @RequestParam String lesson_type, @RequestParam String student_group, @RequestParam String date, @RequestParam int number_of_hours, Model model) {
-        Record_card_first record_card_first = new Record_card_first(FIO, discipline, lesson_type, student_group, date, number_of_hours);
+    @PostMapping("/teaching/card_first/update")
+    public String card_new_update_first(@RequestParam String discipline, @RequestParam String lesson_type, @RequestParam String student_group, @RequestParam String date, @RequestParam int number_of_hours, Model model) {
+        App_User app_user = (App_User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String usfio = app_user.getFIO();
+        model.addAttribute("usfio", usfio);
+        Record_card_first record_card_first = new Record_card_first(usfio, discipline, lesson_type, student_group, date, number_of_hours);
         rec_card_first_Repository.save(record_card_first);
         return "redirect:/teaching/record_card";
     }
 
-    /*@GetMapping("/teaching/record_card/{id}")
-    public String teaching_record_table_id(@PathVariable(value = "id") long id, App_User user, Model model) {
-        App_User app_user = app_userRepository.findByUsername(user.getUsername());
-        id = app_user.getId();
-        String user_FIO = app_user.getFIO();
-        Optional<Record_card_first> card = rec_card_first_Repository.findById(id);
-        ArrayList<Record_card_first> curr_card = new ArrayList<>();
+    @PostMapping("/teaching/card_second/update")
+    public String card_new_update_second(@RequestParam String kind_of_work, @RequestParam String discipline, @RequestParam String faculty, @RequestParam String student_group, @RequestParam int number_of_students, @RequestParam int number_of_hours, Model model) {
+        App_User app_user = (App_User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String usfio = app_user.getFIO();
+        model.addAttribute("usfio", usfio);
+        Record_card_second record_card_second = new Record_card_second(usfio, kind_of_work, discipline, faculty, student_group, number_of_students, number_of_hours);
+        rec_card_second_Repository.save(record_card_second);
+        return "redirect:/teaching/record_card";
+    }
 
-        return "teaching-record_card";
-    }*/
-
-
-    @GetMapping("/teaching/record_cardsss")
-    public String teaching_record_table_id(Model model) {
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        UserDetails userDetails = null;
-        if (principal instanceof UserDetails) {
-            userDetails = (UserDetails) principal;
-        }
-        String usname = userDetails.getUsername();
-        User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        model.addAttribute("usname", usname);
+    @GetMapping("/teaching/record_card")
+    public String teaching_record_table(Model model) {
+        App_User app_user = (App_User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String usfio = app_user.getFIO();
+        model.addAttribute("usfio", usfio);
+        List<Record_card_first> first_card_data =  rec_card_first_Repository.findByFIO(usfio);
+        model.addAttribute("first_card_data", first_card_data);
+        List<Record_card_second> second_card_data =  rec_card_second_Repository.findByFIO(usfio);
+        model.addAttribute("second_card_data", second_card_data);
         return "teaching-record_card";
     }
 
+
+    @GetMapping("/teaching/record_cards_show")
+    public String show_record_cards(Model model) {
+        List<App_User> teachers = app_userRepository.findAll();
+        model.addAttribute("teachers", teachers);
+        return "teaching-record_card_all";
+    }
+
+    @PostMapping("/teaching/record_cards_show")
+    public String record_card_search(@RequestParam String teacherFIO, Model model) {
+        List<App_User> teachers = app_userRepository.findAll();
+        model.addAttribute("teachers", teachers);
+        List<Record_card_first> first_card_data =  rec_card_first_Repository.findByFIO(teacherFIO);
+        model.addAttribute("first_card_data", first_card_data);
+        List<Record_card_second> second_card_data =  rec_card_second_Repository.findByFIO(teacherFIO);
+        model.addAttribute("second_card_data", second_card_data);
+        return "teaching-record_card_all";
+    }
 }

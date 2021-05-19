@@ -12,6 +12,7 @@ public class Record_card_second {
 
     private String FIO, kind_of_work, discipline, faculty, student_group;
     private int number_of_students, number_of_hours;
+    private boolean activity;
 
     public Record_card_second() {
     }
@@ -24,6 +25,15 @@ public class Record_card_second {
         this.student_group = student_group;
         this.number_of_students = number_of_students;
         this.number_of_hours = number_of_hours;
+        this.activity = true;
+    }
+
+    public boolean isActivity() {
+        return activity;
+    }
+
+    public void setActivity(boolean activity) {
+        this.activity = activity;
     }
 
     public Long getId() {
