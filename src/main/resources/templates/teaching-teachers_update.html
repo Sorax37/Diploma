@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Обновление списка преподавателей</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Обновление списка преподавателей</h1><br>
+    <form action="/teaching/teachers/update" method="post">
+        <input type="text" name="number" placeholder="Введите номер п/п" class="form-control"><br>
+        <input type="text" name="FIO" placeholder="Введите ФИО преподавателя" class="form-control"><br>
+        <input type="text" name="plan" placeholder="Введите план" class="form-control"><br>
+        <input type="text" name="rate" placeholder="Введите ставку" class="form-control"><br>
+        <input type="text" name="teacher_load" placeholder="Введите нагрузку" class="form-control"><br>
+        <input type="text" name="total" placeholder="Всего" class="form-control"><br>
+        <input type="text" name="remainder" placeholder="Введите остаток" class="form-control"><br>
+        <input type="text" name="lectures" placeholder="Введите количество лекций" class="form-control"><br>
+        <input type="text" name="practic_works" placeholder="Введите количество практических работ" class="form-control"><br>
+        <input type="text" name="lab_works" placeholder="Введите количество лабораторных работ" class="form-control"><br>
+        <input type="text" name="tek_consult" placeholder="Введите количество тек. консультаций" class="form-control"><br>
+        <input type="text" name="ex_consult" placeholder="Введите количество экз. консультаций" class="form-control"><br>
+        <input type="text" name="exams" placeholder="Введите количество экзаменов" class="form-control"><br>
+        <input type="text" name="offsets" placeholder="Введите количество зачетов" class="form-control"><br>
+        <input type="text" name="KP" placeholder="Введите КП" class="form-control"><br>
+        <input type="text" name="KR" placeholder="Введите КР" class="form-control"><br>
+        <input type="text" name="control_works" placeholder="Введите количество контрольных работ" class="form-control"><br>
+        <input type="text" name="addit" placeholder="Введите количество дополнительных занятий" class="form-control"><br>
+        <input type="text" name="leader_graduate" placeholder="Руководство аспирантами" class="form-control"><br>
+        <input type="text" name="entering_graduate" placeholder="Вступ. в аспирантуру" class="form-control"><br>
+        <input type="text" name="practic" placeholder="Практика" class="form-control"><br>
+        <input type="text" name="FQW_bachelors" placeholder="ВКР бакалавры" class="form-control"><br>
+        <input type="text" name="check_FQW" placeholder="Проверка ВКР" class="form-control"><br>
+        <input type="text" name="leader_mag_first" placeholder="Руководство магистрами 1 курс" class="form-control"><br>
+        <input type="text" name="leader_mag_second" placeholder="Руководство магистрами 2 курс" class="form-control"><br>
+        <input type="text" name="comiss_bac" placeholder="ГЭК бакалавры" class="form-control"><br>
+        <input type="text" name="comiss_mag" placeholder="ГЭК магистры" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+</div>
+
+</body>
+</html>

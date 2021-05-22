@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Преподаватели</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container">
+    <h1>Преподаватели</h1><br>
+    <table class="table table-bordered">
+        <thead>
+        <th scope="col">Номер п/п</th>
+        <th scope="col">ФИО</th>
+        <th scope="col">План</th>
+        <th scope="col">Ставка</th>
+        <th scope="col">Нагрузка</th>
+        <th scope="col">Всего</th>
+        <th scope="col">Остаток</th>
+        <th scope="col">Лекции</th>
+        <th scope="col">Практики</th>
+        <th scope="col">Лабораторные</th>
+        <th scope="col">Тек консультации</th>
+        <th scope="col">Экз консультации</th>
+        <th scope="col">Экзамены</th>
+        <th scope="col">Зачеты</th>
+        <th scope="col">КП</th>
+        <th scope="col">КР</th>
+        <th scope="col">Контр</th>
+        <th scope="col">Доп</th>
+        <th scope="col">Руководство аспирантами</th>
+        <th scope="col">Вступ в аспирантуру</th>
+        <th scope="col">Практика</th>
+        <th scope="col">ВКР бакалавры</th>
+        <th scope="col">Проверка ВКР</th>
+        <th scope="col">Руководство магистрами 1 курс</th>
+        <th scope="col">Руководство магистрами 2 курс</th>
+        <th scope="col">ГЭК бакалавры</th>
+        <th scope="col">ГЭК магистры</th>
+
+        </thead>
+        <tbody th:each="el : ${teacherData}" >
+        <tr>
+            <td>
+                <div th:text="${el.number}"></div>
+            </td>
+            <td>
+                <div th:text="${el.FIO}"></div>
+            </td>
+            <td>
+                <div th:text="${el.plan}"></div>
+            </td>
+            <td>
+                <div th:text="${el.rate}"></div>
+            </td>
+            <td>
+                <div th:text="${el.teacher_load}"></div>
+            </td>
+            <td>
+                <div th:text="${el.total}"></div>
+            </td>
+            <td>
+                <div th:text="${el.remainder}"></div>
+            </td>
+            <td>
+                <div th:text="${el.lectures}"></div>
+            </td>
+            <td>
+                <div th:text="${el.practic_works}"></div>
+            </td>
+            <td>
+                <div th:text="${el.lab_works}"></div>
+            </td>
+            <td>
+                <div th:text="${el.tek_consult}"></div>
+            </td>
+            <td>
+                <div th:text="${el.ex_consult}"></div>
+            </td>
+            <td>
+                <div th:text="${el.exams}"></div>
+            </td>
+            <td>
+                <div th:text="${el.offsets}"></div>
+            </td>
+            <td>
+                <div th:text="${el.KP}"></div>
+            </td>
+            <td>
+                <div th:text="${el.KR}"></div>
+            </td>
+            <td>
+                <div th:text="${el.control_works}"></div>
+            </td>
+            <td>
+                <div th:text="${el.addit}"></div>
+            </td>
+            <td>
+                <div th:text="${el.leader_graduate}"></div>
+            </td>
+            <td>
+                <div th:text="${el.entering_graduate}"></div>
+            </td>
+            <td>
+                <div th:text="${el.practic}"></div>
+            </td>
+            <td>
+                <div th:text="${el.FQW_bachelors}"></div>
+            </td>
+            <td>
+                <div th:text="${el.check_FQW}"></div>
+            </td>
+            <td>
+                <div th:text="${el.leader_mag_first}"></div>
+            </td>
+            <td>
+                <div th:text="${el.leader_mag_second}"></div>
+            </td>
+            <td>
+                <div th:text="${el.comiss_bac}"></div>
+            </td>
+            <td>
+                <div th:text="${el.comiss_mag}"></div>
+            </td>
+        </tr>
+        </tbody>
+
+    </table><br>
+
+</div>
+
+</body>
+</html>

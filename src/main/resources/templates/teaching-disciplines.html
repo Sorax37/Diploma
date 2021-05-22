@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список дисциплин</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container">
+    <h1>Дисциплины</h1><br>
+    <table class="table table-bordered">
+        <thead>
+        <th scope="col">Номер</th>
+        <th scope="col">Код</th>
+        <th scope="col">Аббревиатура</th>
+        <th scope="col">Название</th>
+        </thead>
+        <tbody th:each="el : ${disciplinesData}" >
+        <tr>
+            <td>
+                <div th:text="${el.number}"></div>
+            </td>
+            <td>
+                <div th:text="${el.code}"></div>
+            </td>
+            <td>
+                <div th:text="${el.abbreviation}"></div>
+            </td>
+            <td>
+                <div th:text="${el.name}"></div>
+            </td>
+        </tr>
+        </tbody>
+    </table><br>
+
+</div>
+
+</body>
+</html>

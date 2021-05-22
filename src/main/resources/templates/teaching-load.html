@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Нагрузка</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container">
+    <h1>Нагрузка</h1><br>
+    <table class="table table-bordered">
+        <thead>
+        <th scope="col">Номер</th>
+        <th scope="col">Лектор</th>
+        <th scope="col">Ассистент</th>
+        <th scope="col">Специальность</th>
+        <th scope="col">Отделение</th>
+        <th scope="col">Семестр</th>
+        <th scope="col">Кол-во потоков</th>
+        <th scope="col">Кол-во групп</th>
+        <th scope="col">Кол-во студентов</th>
+        <th scope="col">Дисциплина</th>
+        <th scope="col">Лекции на 1 поток</th>
+        <th scope="col">Всего лекций</th>
+        <th scope="col">Пр. зан. на 1 группу</th>
+        <th scope="col">Всего пр. зан.</th>
+        <th scope="col">Лаб. на 0.5 групп</th>
+        <th scope="col">Всего лаб.</th>
+        <th scope="col">Консульт. тек.</th>
+        <th scope="col">Консульт. экз.</th>
+        <th scope="col">Экзамены</th>
+        <th scope="col">Зачеты</th>
+        <th scope="col">Курс. проект</th>
+        <th scope="col">Курс. работа</th>
+        <th scope="col">Контр. работа</th>
+        <th scope="col">Доп. занятия</th>
+        <th scope="col">Инд. зан. на 1 группу</th>
+        <th scope="col">Всего инд. зан.</th>
+        <th scope="col">Дисциплина полностью</th>
+
+        </thead>
+        <tbody th:each="el : ${loadData}" >
+        <tr>
+            <td>
+                <div th:text="${el.number}"></div>
+            </td>
+            <td>
+                <div th:text="${el.lector}"></div>
+            </td>
+            <td>
+                <div th:text="${el.assistant}"></div>
+            </td>
+            <td>
+                <div th:text="${el.specialty}"></div>
+            </td>
+            <td>
+                <div th:text="${el.branch}"></div>
+            </td>
+            <td>
+                <div th:text="${el.semester}"></div>
+            </td>
+            <td>
+                <div th:text="${el.flow_number}"></div>
+            </td>
+            <td>
+                <div th:text="${el.group_number}"></div>
+            </td>
+            <td>
+                <div th:text="${el.student_number}"></div>
+            </td>
+            <td>
+                <div th:text="${el.discipline_code}"></div>
+            </td>
+            <td>
+                <div th:text="${el.lectures_one_flow}"></div>
+            </td>
+            <td>
+                <div th:text="${el.total_lectures}"></div>
+            </td>
+            <td>
+                <div th:text="${el.prac_works_one_flow}"></div>
+            </td>
+            <td>
+                <div th:text="${el.total_prac_works}"></div>
+            </td>
+            <td>
+                <div th:text="${el.lab_works_half_group}"></div>
+            </td>
+            <td>
+                <div th:text="${el.total_lab_works}"></div>
+            </td>
+            <td>
+                <div th:text="${el.consult_tek}"></div>
+            </td>
+            <td>
+                <div th:text="${el.consult_ex}"></div>
+            </td>
+            <td>
+                <div th:text="${el.exams}"></div>
+            </td>
+            <td>
+                <div th:text="${el.offsets}"></div>
+            </td>
+            <td>
+                <div th:text="${el.course_project}"></div>
+            </td>
+            <td>
+                <div th:text="${el.course_work}"></div>
+            </td>
+            <td>
+                <div th:text="${el.control_work}"></div>
+            </td>
+            <td>
+                <div th:text="${el.addit_lesson}"></div>
+            </td>
+            <td>
+                <div th:text="${el.indiv_one_group}"></div>
+            </td>
+            <td>
+                <div th:text="${el.total_indiv}"></div>
+            </td>
+            <td>
+                <div th:text="${el.discipline_name}"></div>
+            </td>
+        </tr>
+        </tbody>
+
+    </table><br>
+
+</div>
+
+</body>
+</html>

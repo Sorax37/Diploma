@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Штатное расписание</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container">
+    <h1>Штатное расписание</h1><br>
+    <table class="table table-bordered">
+        <thead>
+        <th scope="col">ФИО</th>
+        <th scope="col">Ставка</th>
+        <th scope="col">Норма</th>
+        <th scope="col">План</th>
+        </thead>
+        <tbody th:each="el : ${staffingTableData}" >
+        <tr>
+            <td>
+                <div th:text="${el.teacher}"></div>
+            </td>
+            <td>
+                <div th:text="${el.rate}"></div>
+            </td>
+            <td>
+                <div th:text="${el.norm}"></div>
+            </td>
+            <td>
+                <div th:text="${el.plan}"></div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
