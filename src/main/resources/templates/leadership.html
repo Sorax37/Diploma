@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Руководство</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container">
+    <h3>Загрузка файлов</h3>
+    <form id="uploadFiles" name="uploadFiles" method="post" th:action=@{/leadership/upload} enctype="multipart/form-data">
+        <input type="file" name="files" multiple required />
+        <button type="submit">Подтвердить</button>
+    </form>
+
+    <div>
+        <h3>Список документов</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Download Link</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="doc:${docs}">
+                <td th:text="${doc.Id}" />
+                <td th:text="${doc.docName}"/>
+                <td><a th:href="@{'/leadership/downloadFile/'+${doc.id}}">Download</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
