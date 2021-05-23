@@ -9,27 +9,41 @@
 <header th:insert="blocks/header :: header"></header>
 
 <div class="container">
-    <h3>Загрузка файлов</h3>
+    <h3>Загрузка файлов</h3><br>
     <form id="uploadFiles" name="uploadFiles" method="post" th:action=@{/leadership/upload} enctype="multipart/form-data">
+        <label>Введите ФИО руководителя</label>
+        <input type="text" name="teacher" placeholder="ФИО руководителя" class="form-control"><br>
+        <label>Введите группу студента</label>
+        <input type="text" name="student_group" placeholder="Группа студента" class="form-control"><br>
+        <label>Введите ФИО студента</label>
+        <input type="text" name="student" placeholder="ФИО студента" class="form-control"><br>
+        <label>Введите название ВКР</label>
+        <input type="text" name="fqw_topic" placeholder="Название ВКР" class="form-control"><br>
         <input type="file" name="files" multiple required />
-        <button type="submit">Подтвердить</button>
-    </form>
+        <button type="submit" class="btn btn-success">Подтвердить</button>
+    </form><br><br>
 
     <div>
-        <h3>Список документов</h3>
-        <table>
+        <h3>Список документов ВКР</h3><br>
+        <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Download Link</th>
+                <th>Файл</th>
+                <th>Руководитель</th>
+                <th>Группа</th>
+                <th>Студент</th>
+                <th>Название ВКР</th>
+                <th>Ссылка на скачивание</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="doc:${docs}">
-                <td th:text="${doc.Id}" />
                 <td th:text="${doc.docName}"/>
-                <td><a th:href="@{'/leadership/downloadFile/'+${doc.id}}">Download</a></td>
+                <td th:text="${doc.teacher}"/>
+                <td th:text="${doc.student_group}"/>
+                <td th:text="${doc.student}"/>
+                <td th:text="${doc.fqw_topic}"/>
+                <td><a th:href="@{'/leadership/downloadFile/'+${doc.id}}">Скачать</a></td>
             </tr>
             </tbody>
         </table>

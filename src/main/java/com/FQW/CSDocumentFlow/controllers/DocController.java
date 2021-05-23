@@ -31,9 +31,9 @@ public class DocController {
     }
 
     @PostMapping("/leadership/upload")
-    public String uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
+    public String uploadMultipleFiles(@RequestParam("files") MultipartFile[] files, @RequestParam String teacher, @RequestParam String student_group, @RequestParam String student, @RequestParam String fqw_topic) {
         for (MultipartFile file: files) {
-            docStorageService.saveFile(file);
+            docStorageService.saveFile(file, teacher, student_group, student, fqw_topic);
         }
         return "redirect:/leadership";
     }

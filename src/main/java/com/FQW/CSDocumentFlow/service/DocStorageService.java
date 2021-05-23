@@ -15,10 +15,10 @@ public class DocStorageService {
     @Autowired
     private DocRepository docRepository;
 
-    public Doc saveFile(MultipartFile file) {
+    public Doc saveFile(MultipartFile file, String teacher, String student_group, String student, String fqw_topic) {
         String docname = file.getOriginalFilename();
         try {
-            Doc doc = new Doc(docname, file.getContentType(), file.getBytes());
+            Doc doc = new Doc(docname, file.getContentType(), file.getBytes(), teacher, student_group, student, fqw_topic);
             return docRepository.save(doc);
 
         } catch (Exception e) {
